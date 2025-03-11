@@ -4,8 +4,22 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit28fdf9492d195adf2fb2e7ba1979626d
+class ComposerStaticInitde3652cf7e4bf8e2010815060c1bc76c
 {
+    public static $prefixLengthsPsr4 = array (
+        'F' => 
+        array (
+            'Fullworks_Free_Plugin_Lib\\' => 26,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Fullworks_Free_Plugin_Lib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alanef/free_plugin_lib/src',
+        ),
+    );
+
     public static $prefixesPsr0 = array (
         'C' => 
         array (
@@ -23,8 +37,10 @@ class ComposerStaticInit28fdf9492d195adf2fb2e7ba1979626d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInit28fdf9492d195adf2fb2e7ba1979626d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit28fdf9492d195adf2fb2e7ba1979626d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitde3652cf7e4bf8e2010815060c1bc76c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitde3652cf7e4bf8e2010815060c1bc76c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitde3652cf7e4bf8e2010815060c1bc76c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitde3652cf7e4bf8e2010815060c1bc76c::$classMap;
 
         }, null, ClassLoader::class);
     }

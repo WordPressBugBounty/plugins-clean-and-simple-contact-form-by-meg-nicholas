@@ -4,11 +4,11 @@ class CSCF_View {
 	/**
 	 * Path of the view to render
 	 */
-	var $view = '';
+	var string $view = '';
 	/**
 	 * Variables for the view
 	 */
-	var $vars = array();
+	var array $vars = array();
 
 	/**
 	 * Construct a view from a file in the
@@ -21,7 +21,8 @@ class CSCF_View {
 		if ( file_exists( CSCF_PLUGIN_DIR . '/views/' . $view . '.view.php' ) ) {
 			$this->view = CSCF_PLUGIN_DIR . '/views/' . $view . '.view.php';
 		} else {
-			wp_die( esc_html__( 'View ' . CSCF_PLUGIN_URL . '/views/' . $view . '.view.php' . ' not found' ) );
+			// translators: %s is the path to the view file
+			wp_die( sprintf( esc_html__( 'View %s not found', 'clean-and-simple-contact-form-by-meg-nicholas' ), esc_html( CSCF_PLUGIN_URL . '/views/' . $view . '.view.php' ) ) );
 		}
 	}
 

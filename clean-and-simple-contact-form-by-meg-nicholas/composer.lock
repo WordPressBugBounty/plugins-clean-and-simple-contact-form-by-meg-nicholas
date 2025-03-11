@@ -1,9 +1,14 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "27d86f03d1c986263483b369986ee068",
     "packages": [
         {
             "name": "alanef/free_plugin_lib",
             "version": "v1.0.1",
-            "version_normalized": "1.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alanef/free_plugin_lib.git",
@@ -24,9 +29,7 @@
                 "wp-phpunit/wp-phpunit": "^6.7",
                 "yoast/wp-test-utils": "^1.2"
             },
-            "time": "2025-02-18T15:16:14+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Fullworks_Free_Plugin_Lib\\": "src/"
@@ -47,12 +50,11 @@
                 "issues": "https://github.com/alanef/free_plugin_lib/issues",
                 "source": "https://github.com/alanef/free_plugin_lib/tree/v1.0.1"
             },
-            "install-path": "../alanef/free_plugin_lib"
+            "time": "2025-02-18T15:16:14+00:00"
         },
         {
             "name": "composer/installers",
             "version": "v1.0.12",
-            "version_normalized": "1.0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
@@ -71,7 +73,6 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "2014-02-24T04:21:34+00:00",
             "type": "composer-installer",
             "extra": {
                 "class": "Composer\\Installers\\Installer",
@@ -79,7 +80,6 @@
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Composer\\Installers\\": "src/"
@@ -138,9 +138,18 @@
                 "issues": "https://github.com/composer/installers/issues",
                 "source": "https://github.com/composer/installers/tree/master"
             },
-            "install-path": "./installers"
+            "time": "2014-02-24T04:21:34+00:00"
         }
     ],
-    "dev": false,
-    "dev-package-names": []
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.4"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
