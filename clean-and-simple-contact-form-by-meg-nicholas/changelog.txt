@@ -1,5 +1,40 @@
+= 4.11 =
+* Added REST API support for headless WordPress implementations
+  - New endpoint at /wp-json/cscf/v1/submit with authentication
+  - Configurable user capability requirements
+  - Full form validation (excluding reCAPTCHA for authenticated requests)
+* Added SMTP configuration via wp-config constants
+  - Support for all major email services (Gmail, SendGrid, Mailgun, etc.)
+  - Useful for development with tools like Mailpit
+  - No UI needed - server-level configuration
+* Added developer hooks for extensibility
+  - Action hooks: cscf_before_send_email, cscf_after_send_email, cscf_form_submitted (plus type-specific variants)
+  - Filter hook: cscf_form_data for REST API data modification
+* Added comprehensive developer documentation
+  - Hooks and filters guide with examples
+  - REST API implementation guide
+  - SMTP configuration guide
+* Improved extensibility for third-party integrations (CRMs, webhooks, mailing lists)
+* Improved phone number validation
+  - Now validates format (only allows digits, +, (), -, and spaces)
+  - Format validation applies even when phone field is optional
+  - Fixed bug where phone validation error used wrong error key
+* Improved form validation user experience
+  - reCAPTCHA validation now skipped if other form errors exist
+  - Prevents users from being blocked by reCAPTCHA when fixing validation errors
+* Fixed JavaScript bugs
+  - Fixed server-side validation errors not displaying when using AJAX submission
+  - Fixed jQuery selector looking for div instead of span elements for error display
+  - Fixed deprecated jQuery .selector usage for jQuery 3.0+ compatibility
+* Added comprehensive unit tests for form validation
+* Removed deprecated load_plugin_textdomain() function - WordPress handles translations automatically since v4.6
+
+= 4.10 =
+* Added opt in
+* Added code to comply with current plugin guidelines
+
 = 4.9.1 =
-* corrected link markup in settings pag
+* corrected link markup in settings page
 
 = 4.9 =
 * add auto integration  of Fullworks Anti Spam
@@ -44,10 +79,10 @@
 * tested up to 5.8 beta 2 and PHP 8.0
 
 = 4.7.1 =
-* Tested with Wordpress version 5.3
+* Tested with WordPress version 5.3
 Fixed XSS vulnerability in GDPR consent message
 = 4.7.0 =
-* Tested with Wordpress version 4.9.6
+* Tested with WordPress version 4.9.6
 * Added consent to contact checkbox for GDPR compliance
 = 4.6.2 =
 * Turkish translation update. Thanks to Abdullah Manaz! Tested up to WordPress 4.6.1.
@@ -166,103 +201,4 @@ please do not use the plugin's default style sheet (uncheck the box in the setti
 Polish thanks to Patryk Peas
 = 4.1.2 =
 * Added some FAQs
-* Added alternative shortcode [cscf-contact-form] for use when conflicts could occur.
-* Updated the documentation.
-* Recaptcha form now responds to language changes
-* Updated pot file to reflect new name space
-* Changed name space from cff to cscf
-* Settings screen: recaptcha theme and key inputs are immediately enabled/disabled as the 'Use reCAPTCHA' box is clicked.
-* Corrected some html seen as invalid by http://validator.w3.org/
-* removed '<?=' and replaced with '<?php echo' in cscf_settings, thanks go to andrewbacon
-* Added notice to setting screen when JetPack's contact form is active
-* Fixed problem where 'Please enter a valid email address' was not translating in the 'confirm email address' input
-= 4.1.1 =
-* Fixed potential conflicts with themes that use bootstrap
-* Enabled internationalisation, this plugin will now work with multiple languages
-* Added German translation file for my German friends, thanks to faktorzweinet for the translation
-= 4.1.0 =
-* Fixed a bug in class.cff_settings.php where php opening tag had got missed off. This problem caused the settings screen not to display correctly but only occurred with some versions of php. Please upgrade if you have this problem.
-= 4.0.9 =
-* Switched header argument of wp_mail over to a filter to remove any potential conflicts with other emailing plugins or themes
-* The ability to set a different recipient email address. Previously all email was sent to the WordPress administrator email address.
-* Allow the email subject to be customised.
-= 4.0.8 =
-* Fixed a bug: When using reCAPTCHA ajax did not work.
-* Fixed a bug: Ajax validation was not checking email address were equal (server side was doing it instead)
-* Improvement: Ajax now works better.
-* Documentation update: nicer links (worked how to do them in markdown!), changelog and upgrade notice sections now correctly formatted.
-= 4.0.7 =
-* Fixed a bug: Plugin name is actually clean-and-simple-contact-form now (not contact-form) but this new name needed to be updated in the plugin settings definitions. I also needed to rename contact-form.php to clean-and-simple-contact-form.php. My thanks to Jakub for finding this bug.
-* If your webpage is ssl then reCAPTCHA will now also use ssl mode.
-
-
-== Upgrade Notice ==
-= 4.7.0 =
-Tested with Wordpress version 4.9.6. Added 'consent to contact' GDPR compliance message
-= 4.6.2 =
-Updated translations. Tested up to WordPress 4.6.1.
-= 4.6.0 =
-Updated translations. Correct textdomain. Prevent multiple clicks.
-= 4.5.1 =
-Translation updates
-= 4.5.0 =
-Added support for Google Recaptcha2. Updated translation. Fixed layout bug.
-= 4.4.4 =
-Added languages, css fix for twenty fifteen theme, remove 'notice' errors, remove empty divs
-= 4.4.3 =
-Tested up to 4.1
-= 4.4.2 =
-Akismet tweak and translation updates
-= 4.4.1 =
-Fixed XSS issue
-= 4.4.0 =
-Added option for enquiry to email themselves a copy of the message plus Polish translation updated
-= 4.3.4 =
-Email now includes page url of contact form, removed link in main contact form view
-= 4.3.3 =
-Hebrew Language added, name field moved to top of form, added 'reply-to'
-= 4.3.2 =
-Added Norwegian and Brazilian Portugese Translations
-= 4.3.1 =
-Checked compatibility with WP 3.8 and TwentyFourteen theme, translation updates, defaults for new installations
-= 4.3.0 =
-Contact form is now filtered for spam when the Akismet plugin is present.
-[Learn more](http://www.megnicholas.co.uk/articles/contact-form-plugin-can-detect-spam/ "Learn More").
-= 4.2.5 =
-Small bug fix
-= 4.2.4 =
-'Confirm Email' can now be turned off. Arabic translation added.
-= 4.2.3 =
-Multiple recipients are now possible
-= 4.2.2 =
-Remove ALL possibility of conflicts with other plugins that also include Google reCAPTCHA library
-= 4.2.1 =
-Translation and housekeeping updates
-= 4.2.0 =
-Translation and documentation updates
-= 4.1.9 =
-Support for [Bootstrap 3](http://www.megnicholas.co.uk/articles/version-4-1-9-supports-bootstrap-3/ "More information on 4.1.9")
-= 4.1.8 =
-Added Russian translation and some modifications to Estonian and Spanish translations
-= 4.1.7
-More translations. A helpful note about the short code to use has been put on the settings screen
-= 4.1.6 =
-Ability to specify a 'From' address. This email will be used to send the mail instead of the form filler's email address.
-= 4.1.5 =
-Works with themes that pre-process the html.
-= 4.1.4 =
-New translations - Slovak and Catalan
-= 4.1.3 =
-Form now submits via ajax!
-= 4.1.2 =
-Alternative shortcode, recaptcha internationalisation, Jetpack conflict warning notice
-= 4.1.1 =
-Internationalisation, fixed conflict with some bootstrapped themes.
-= 4.1.0 =
-Please upgrade if your settings screen is not displaying.
-= 4.0.9 =
-More customisation: recipient email address, and email subject.
-= 4.0.8 =
-Ajax now works when your form has reCAPTCHA on it. Ajax validation is now cleaner.
-= 4.0.7 =
-Fixed a bug which occurred when plugin name was changed. reCAPTCHA will now use ssl if your webpage is ssl.
+* Added alternative shortcode

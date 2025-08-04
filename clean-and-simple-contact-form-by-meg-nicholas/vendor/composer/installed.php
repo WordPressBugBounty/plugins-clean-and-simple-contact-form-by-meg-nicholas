@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'fullworks/clean-and-simple-contact-form',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '6057cf8bf7c1cd56b1f7d6b170e7208543f25dde',
+        'pretty_version' => 'v4.11',
+        'version' => '4.11.0.0',
+        'reference' => '801b967317613364d9e34394960f064495cb2283',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'fullworks/clean-and-simple-contact-form' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '6057cf8bf7c1cd56b1f7d6b170e7208543f25dde',
+            'pretty_version' => 'v4.11',
+            'version' => '4.11.0.0',
+            'reference' => '801b967317613364d9e34394960f064495cb2283',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
