@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'fullworks/clean-and-simple-contact-form',
-        'pretty_version' => '4.12.2',
-        'version' => '4.12.2.0',
-        'reference' => '14b0fe2d61773be5cb9c79e8c7ff1bc299e19c6e',
+        'pretty_version' => '4.12.3',
+        'version' => '4.12.3.0',
+        'reference' => '52453895a5abc80aa496d27e0e912e94f5dfbf24',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'alanef/free_plugin_lib' => array(
-            'pretty_version' => '1.2.3',
-            'version' => '1.2.3.0',
-            'reference' => '0e088beec94122104382768db0e0714fb4655dd5',
+            'pretty_version' => '1.2.4',
+            'version' => '1.2.4.0',
+            'reference' => '13c1802b6abe03800dfc93400c92aaf0e74c4a6d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../alanef/free_plugin_lib',
             'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'fullworks/clean-and-simple-contact-form' => array(
-            'pretty_version' => '4.12.2',
-            'version' => '4.12.2.0',
-            'reference' => '14b0fe2d61773be5cb9c79e8c7ff1bc299e19c6e',
+            'pretty_version' => '4.12.3',
+            'version' => '4.12.3.0',
+            'reference' => '52453895a5abc80aa496d27e0e912e94f5dfbf24',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
